@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
@@ -11,7 +12,7 @@ const userroute = require('./api/routes/users')
 
 
 mongoose.connect(
-	'mongodb+srv://manny:anteneh23@cluster0.pe9vc.mongodb.net/store?retryWrites=true&w=majority',
+	process.env.DBURI,
 	{useNewUrlParser: true, useUnifiedTopology: true}
 )
 
